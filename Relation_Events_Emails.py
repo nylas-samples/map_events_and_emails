@@ -42,8 +42,8 @@ for event in events:
                 event.title,
                 ",".join([participant['email'] for participant in event.participants]),
                 event.description,
-                event.when['start_time'],
-                event.when['end_time']
+                datetime.datetime.fromtimestamp(event.when['start_time']),
+                datetime.datetime.fromtimestamp(event.when['end_time'])
                 ))
         case "datespan":
             print("Title: {} | Participants: {} | Description: {} | Start Time: {} | End Time: {}".format(
@@ -58,7 +58,7 @@ for event in events:
                 event.title,
                 ",".join([participant['email'] for participant in event.participants]),
                 event.description,
-                event.when['date']
+                datetime.datetime.fromtimestamp(event.when['date'])
                 ))
     
 # Select the first event and get the list of participants
