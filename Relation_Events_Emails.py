@@ -20,7 +20,7 @@ nylas = APIClient(
 
 calendars = nylas.calendars.all()
 # Get the calendar_id of the "Client Meetings" calendar
-calendar_id = [ calendar['id'] for calendar in calendars if 'alvaro.t@nylas.com' in calendar['name']][0]
+calendar_id = [ calendar['id'] for calendar in calendars if '<YOUR_CALENDAR_NAME>' in calendar['name']][0]
 
 today = datetime.date.today()
 
